@@ -1,0 +1,19 @@
+@if (ifSupp) {
+  <button
+    type="button"
+    (click)="clickOn()"
+    [disabled]="!tekst"
+    class="
+    mt-40
+      bg-blue-500 hover:bg-blue-700 
+      text-white font-bold 
+      py-2 px-4 rounded 
+      transition-colors duration-200 
+      disabled:bg-gray-400 disabled:cursor-not-allowed
+    "
+  >
+    {{ ifPlays ? 'Zatrzymaj' : 'Odsłuchaj tekst' }}
+  </button>
+} @else {
+  <p class="text-sm text-red-600">Twoja przeglądarka nie wspiera funkcji lektora.</p>
+}
