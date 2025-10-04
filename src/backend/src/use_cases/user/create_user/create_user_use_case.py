@@ -20,8 +20,3 @@ class CreateUserUseCase(UseCaseBase):
         self.session.commit()
 
         return CreateUserResponseDto(id=new_user.id, firstname=new_user.firstname, lastname=new_user.lastname)
-
-
-
-
-
