@@ -2,9 +2,11 @@ import { Component, inject, OnInit } from '@angular/core';
 import { PlacesListRetrieval } from './places-list-retrieval';
 import { PlacesListRetrievalContract } from './places-list-retrieval-contracts';
 import { MatCardModule } from '@angular/material/card';
+import { MapComponent } from './map/map';
+
 @Component({
   selector: 'app-places-list',
-  imports: [MatCardModule],
+  imports: [MatCardModule, MapComponent],
   templateUrl: './places-list.html',
   styleUrl: './places-list.css',
 })
@@ -22,7 +24,7 @@ export class PlacesList implements OnInit {
       this.placesService
         .getPlacesByLatLgn(this.latitude, this.longitude)
         .subscribe((data) => {
-          this.places = data;
+          this.places = data.slice(0, 1);
         });
     });
   }

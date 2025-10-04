@@ -10,6 +10,14 @@
       <img src="{{ place.imageUrl }}" />
       {{ place.description }}
     </div>
+    <app-map
+      class="h-40 w-1/2"
+      [origin]="{ lat: latitude, lng: longitude }"
+      [destination]="{
+        lat: place.coordinates.lat,
+        lng: place.coordinates.lgn
+      }"
+    ></app-map>
   </mat-card-content>
 </mat-card>
 }
