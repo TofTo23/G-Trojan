@@ -10,6 +10,7 @@ import * as L from 'leaflet';
 export class MapComponent implements AfterViewInit {
   @Input() origin!: { lat: number; lng: number };
   @Input() destination!: { lat: number; lng: number };
+  @Input() id!: string;
 
   private map!: L.Map;
 
@@ -28,7 +29,7 @@ export class MapComponent implements AfterViewInit {
     });
 
     // inicjalizacja mapy
-    this.map = L.map('map', {
+    this.map = L.map('map-' + this.id, {
       center: [this.origin.lat, this.origin.lng],
       zoom: 13,
     });
@@ -48,7 +49,9 @@ export class MapComponent implements AfterViewInit {
     ).addTo(this.map);
 
     // markery start / meta
-    L.marker([this.origin.lat, this.origin.lng]).addTo(this.map);
+    L.marker([this.origin.lat, this.origin.lng], { title: 'You' }).addTo(
+      this.map
+    );
     L.marker([this.destination.lat, this.destination.lng]).addTo(this.map);
 
     this.drawRoute();

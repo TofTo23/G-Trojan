@@ -24,7 +24,7 @@ export class PlacesList implements OnInit {
       this.placesService
         .getPlacesByLatLgn(this.latitude, this.longitude)
         .subscribe((data) => {
-          this.places = data.slice(0, 1);
+          this.places = data;
         });
     });
   }
