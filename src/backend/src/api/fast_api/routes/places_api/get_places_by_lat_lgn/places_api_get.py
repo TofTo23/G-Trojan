@@ -7,9 +7,6 @@ from src.use_cases.places_api.get_places_api.get_places_api_query import GetPlac
 from src.use_cases.places_api.get_places_api.responses import PlacesListRetrievalContract
 from src.api.fast_api.exception_converter import convert_to_http_exception
 from src.infrastructure.database import get_db
-from src.use_cases.user.create_user.create_user_command import CreateUserCommand
-from src.use_cases.user.create_user.create_user_response_dto import CreateUserResponseDto
-from src.use_cases.user.create_user.create_user_use_case import CreateUserUseCase
 
 router = APIRouter(prefix="/places-api")
 
