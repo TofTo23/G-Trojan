@@ -1,6 +1,18 @@
+// G-Trojan/src/frotnend/src/app/places-list/places-list-retrieval-mock.ts
+
 import { PlacesListRetrievalContract } from './places-list-retrieval-contracts';
 
 export const mockData: PlacesListRetrievalContract[] = [
+  {
+    name: 'Żuraw Gdański',
+    coordinates: {
+      lat: 54.3506,
+      lgn: 18.6575,
+    },
+    description: 'Największy dźwig portowy średniowiecznej Europy, pełniący funkcję dźwigu, fortyfikacji obronnej i bramy miejskiej. Obecnie oddział Narodowego Muzeum Morskiego.',
+    imageUrl:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/%C5%BBuraw_w_Gda%C5%84sku_2018.jpg/800px-%C5%BBuraw_w_Gda%C5%84sku_2018.jpg',
+  },
   {
     name: 'Przykładowe miejsce 1',
     coordinates: {
