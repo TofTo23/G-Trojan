@@ -6,7 +6,6 @@ import { Lektor } from './lektor/lektor';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [Navbar, RouterOutlet, Lektor],
   templateUrl: './app.html',
 })
