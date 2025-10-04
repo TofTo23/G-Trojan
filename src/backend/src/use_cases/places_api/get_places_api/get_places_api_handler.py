@@ -26,7 +26,6 @@ class GetPlacesApiHandler(UseCaseBase):
                 coords = Coordinate(lat=element["center"]["lat"], lgn=element["center"]["lon"])
             else:
                 continue
-
             monuments.append(
                 PlacesListRetrievalContract(
                     name=name,
