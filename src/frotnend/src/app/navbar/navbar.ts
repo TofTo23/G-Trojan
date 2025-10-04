@@ -6,5 +6,6 @@ import { LogInButton } from '../log-in-button/log-in-button';
   selector: 'app-navbar',
   imports: [RouterLink, LogInButton],
   templateUrl: './navbar.html',
+  styleUrl: './navbar.css',
 })
 export class Navbar {}
