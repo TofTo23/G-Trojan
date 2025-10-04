@@ -12,3 +12,5 @@ class Place(EntityBase, SqlAlchemyBase):
     description: Mapped[str] = mapped_column(Text, nullable=True)
     latitude: Mapped[float] = mapped_column(Float, nullable=False)
     longitude: Mapped[float] = mapped_column(Float, nullable=False)
+    # --- NOWE POLE ---
+    image_url: Mapped[str] = mapped_column(String, nullable=True) # Może być puste
