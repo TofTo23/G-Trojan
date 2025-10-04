@@ -1,9 +1,8 @@
 import os
 from typing import Generator
 
-from sentry_sdk.session import Session
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, Session
 
 engine = create_engine(os.getenv("DATABASE_URL"))
 
