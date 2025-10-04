@@ -5,7 +5,7 @@ from sqlalchemy import engine_from_config
 from sqlalchemy import pool
 
 from src.core.entities.base import SqlAlchemyBase
-from src.core.entities.user import User
+from src.core.entities.place import Place
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
