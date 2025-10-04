@@ -1,0 +1,17 @@
+.enter-from-left {
+    animation: slide-from-left 1s ease-out forwards;
+}
+
+@keyframes slide-from-left {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+        /* start po lewej */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        /* koniec w miejscu */
+    }
+}

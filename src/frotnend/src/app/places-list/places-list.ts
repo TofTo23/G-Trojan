@@ -2,11 +2,11 @@ import { Component, inject, OnInit } from '@angular/core';
 import { PlacesListRetrieval } from './places-list-retrieval';
 import { PlacesListRetrievalContract } from './places-list-retrieval-contracts';
 import { MatCardModule } from '@angular/material/card';
-
 @Component({
   selector: 'app-places-list',
   imports: [MatCardModule],
   templateUrl: './places-list.html',
+  styleUrl: './places-list.css',
 })
 export class PlacesList implements OnInit {
   protected latitude!: number;
