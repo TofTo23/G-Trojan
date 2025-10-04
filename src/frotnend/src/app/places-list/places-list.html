@@ -1,0 +1,15 @@
+@for (place of places; track $index) {
+<mat-card class="mb-4">
+  <mat-card-header class="bg-violet-500 text-white">
+    <mat-card-title>
+      {{ place.name }}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content class="bg-violet-400 text-black">
+    <div class="p-4">
+      <img src="{{ place.imageUrl }}" />
+      {{ place.description }}
+    </div>
+  </mat-card-content>
+</mat-card>
+}
