@@ -3,6 +3,7 @@ import { PlacesListRetrieval } from './places-list-retrieval';
 import { PlacesListRetrievalContract } from './places-list-retrieval-contracts';
 import { MatCardModule } from '@angular/material/card';
 import { MapComponent } from './map/map';
+import { mockData } from './places-list-retrieval-mock';
 
 @Component({
   selector: 'app-places-list',
@@ -18,14 +19,15 @@ export class PlacesList implements OnInit {
   private readonly placesService = inject(PlacesListRetrieval);
 
   ngOnInit(): void {
-    navigator.geolocation.watchPosition((pos) => {
-      this.latitude = pos.coords.latitude;
-      this.longitude = pos.coords.longitude;
-      this.placesService
-        .getPlacesByLatLgn(this.latitude, this.longitude)
-        .subscribe((data) => {
-          this.places = data;
-        });
-    });
+    // navigator.geolocation.watchPosition((pos) => {
+    //   this.latitude = pos.coords.latitude;
+    //   this.longitude = pos.coords.longitude;
+    //   this.placesService
+    //     .getPlacesByLatLgn(this.latitude, this.longitude)
+    //     .subscribe((data) => {
+    //       this.places = data;
+    //     });
+    // });
+    this.places = mockData;
   }
 }
