@@ -1,24 +1,31 @@
 @for (place of places; track $index) {
-<mat-card animate.enter="enter-from-left" class="mb-4">
-  <mat-card-header class="bg-violet-500 text-white">
+<mat-card animate.enter="enter-from-left" class="rounded-md mb-6 w-3/4 mx-auto">
+  <mat-card-header class="bg-violet-500 text-white rounded-t-md">
     <mat-card-title>
       {{ place.name }}
     </mat-card-title>
   </mat-card-header>
-  <mat-card-content class="bg-violet-400 text-black">
-    <div class="p-4">
-      <img src="{{ place.imageUrl }}" />
-      {{ place.description }}
-    </div>
-    <div class="w-[50%]">
-      <app-map
-        [id]="$index.toString()"
-        [origin]="{ lat: latitude, lng: longitude }"
-        [destination]="{
-          lat: place.coordinates.lat,
-          lng: place.coordinates.lgn
-        }"
-      ></app-map>
+
+  <mat-card-content class="bg-violet-100 text-black rounded-md">
+    <div class="flex flex-row gap-4 p-4">
+      <!-- Lewa kolumna: obrazek + opis -->
+      <div class="flex-1">
+        <img src="{{ place.imageUrl }}" class="w-full h-auto mb-2 rounded" />
+        <p>{{ place.description }}</p>
+      </div>
+
+      <!-- Prawa kolumna: mapa -->
+      <div class="flex-1 p-4">
+        <app-map
+          [id]="$index.toString()"
+          [origin]="{ lat: latitude, lng: longitude }"
+          [destination]="{
+            lat: place.coordinates.lat,
+            lng: place.coordinates.lgn
+          }"
+          class="w-full h-64"
+        ></app-map>
+      </div>
     </div>
   </mat-card-content>
 </mat-card>
