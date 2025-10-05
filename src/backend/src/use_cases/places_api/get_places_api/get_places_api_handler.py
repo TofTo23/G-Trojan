@@ -2,12 +2,17 @@ from src.use_cases.places_api.get_places_api.get_places_api_query import GetPlac
 from src.use_cases.places_api.get_places_api.queries import fetch_monuments
 from src.use_cases.places_api.get_places_api.responses import Coordinate, PlacesListRetrievalContract
 from src.use_cases.use_case_base import UseCaseBase
+from dotenv import load_dotenv
 import requests
+
+import os
+
+load_dotenv()
 
 
 # Klucze do Google Custom Search API
-GOOGLE_API_KEY = "AIzaSyDIIM7M24G_BVlo8AzAxHWXJNKXSkyot0o"
-SEARCH_ENGINE_ID = "119832e5e4e734053"
+GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
+SEARCH_ENGINE_ID = os.environ.get("SEARCH_ENGINE_ID")
 
 
 def get_image_from_google(query: str):
