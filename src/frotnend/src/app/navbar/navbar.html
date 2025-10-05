@@ -4,9 +4,15 @@
   class="z-[2000] fixed top-2 left-2 right-2 h-16 rounded-xl shadow-md shadow-violet-700 px-6 flex items-center justify-between bg-gradient-to-r from-violet-500 via-purple-600 to-indigo-600"
 >
   <a routerLink="/" class="text-white font-bold text-lg">MyApp</a>
-  <ul class="hidden md:flex space-x-6 text-white">
+  <ul class="hidden md:flex space-x-6 text-white items-center">
+    <li>
+      <app-language></app-language>
+    </li>
     <li>
       <app-log-in-button></app-log-in-button>
+    </li>
+    <li>
+      <app-blog-button></app-blog-button>
     </li>
   </ul>
 </div>
