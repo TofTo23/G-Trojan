@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { Navbar } from './navbar/navbar';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterModule } from '@angular/router';
 import { Lektor } from './lektor/lektor';
 
 
 @Component({
   selector: 'app-root',
-  imports: [Navbar, RouterOutlet, Lektor],
+  standalone: true,
+  imports: [Navbar, RouterOutlet, RouterModule, Lektor],
   templateUrl: './app.html',
 })
 export class App {
