@@ -32,4 +32,154 @@ body {
 
   // Reset the user agent margin.
   margin: 0;
+
+  // Enhanced body animations
+  animation: bodyFadeIn 1.2s ease-out;
+}
+
+@keyframes bodyFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Enhanced Material Design component overrides */
+mat-card {
+  animation: cardSlideUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  animation-fill-mode: both !important;
+}
+
+mat-card:nth-child(1) { animation-delay: 0.1s; }
+mat-card:nth-child(2) { animation-delay: 0.2s; }
+mat-card:nth-child(3) { animation-delay: 0.3s; }
+mat-card:nth-child(4) { animation-delay: 0.4s; }
+mat-card:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes cardSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Enhanced button animations */
+mat-button, mat-raised-button, mat-flat-button, mat-stroked-button {
+  position: relative !important;
+  overflow: hidden !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+mat-button::before, mat-raised-button::before, mat-flat-button::before, mat-stroked-button::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: rgba(255, 255, 255, 0.3) !important;
+  border-radius: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  transition: width 0.6s, height 0.6s !important;
+}
+
+mat-button:hover::before, mat-raised-button:hover::before, mat-flat-button:hover::before, mat-stroked-button:hover::before {
+  width: 300px !important;
+  height: 300px !important;
+}
+
+mat-button:hover, mat-raised-button:hover, mat-flat-button:hover, mat-stroked-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(31, 38, 135, 0.2) !important;
+}
+
+/* Enhanced form field animations */
+mat-form-field {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+mat-form-field:hover {
+  transform: translateY(-1px) !important;
+}
+
+.mat-mdc-form-field-focus-overlay {
+  background-color: rgba(102, 126, 234, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Enhanced input animations */
+mat-input-element, input, textarea {
+  transition: all 0.3s ease !important;
+}
+
+mat-input-element:focus, input:focus, textarea:focus {
+  transform: scale(1.02) !important;
+}
+
+/* Page transition animations */
+router-outlet + * {
+  animation: pageSlideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+@keyframes pageSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Loading animation for async content */
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%) !important;
+  background-size: 200% 100% !important;
+  animation: shimmer 1.5s infinite !important;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Floating elements animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse animation for important elements */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(102, 126, 234, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.8), 0 0 30px rgba(102, 126, 234, 0.4);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
 }
