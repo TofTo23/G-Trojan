@@ -1,10 +1,14 @@
 import os
 from typing import Generator
-
+from dotenv import load_dotenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, Session
 
-engine = create_engine(os.getenv("DATABASE_URL"))
+load_dotenv()
+
+ZMIENNA_BOKSIK = os.environ.get("DATABASE_URL")
+
+engine = create_engine(ZMIENNA_BOKSIK)
 
 SessionLocal = sessionmaker(bind=engine, autoflush=True)
 

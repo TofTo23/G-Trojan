@@ -6,9 +6,13 @@
     </mat-card-title>
   </mat-card-header>
   <mat-card-content class="bg-violet-400 text-black">
-    <div class="p-4">
-      <img src="{{ place.imageUrl }}" />
-      {{ place.description }}
+    <div class="p-4 flex items-start gap-4">
+      <img src="{{ place.imageUrl }}"
+          alt="{{ place.name }}"
+          class="h-[200px] w-auto object-contain" />
+      <div class="flex-1">
+        {{ place.description }}
+      </div>
     </div>
   </mat-card-content>
 </mat-card>
