@@ -9,7 +9,6 @@ export class Shared {
   
   private lan!: string;
 
-
   changeLanguage(lan: string) {
     this.lan = lan;
     this.languageChanged.next(lan);
