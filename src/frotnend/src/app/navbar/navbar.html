@@ -1,18 +1,18 @@
 <div
   #navbar
   animate.enter="enter-animation"
-  class="z-[2000] fixed top-2 left-2 right-2 h-16 rounded-xl shadow-md shadow-violet-700 px-6 flex items-center justify-between bg-gradient-to-r from-violet-500 via-purple-600 to-indigo-600"
+  class="navbar-enhanced z-[2000] fixed top-0 left-0 right-0 h-16 px-6 flex items-center justify-between"
 >
   <a routerLink="/">
-  <img src="samolot.ico" alt="Logo aplikacji" class="h-8 w-8"> </a>
-  <ul class="hidden md:flex space-x-6 text-white items-center">
-    <li>
+  <img src="samolot.ico" alt="Logo aplikacji" class="navbar-logo h-8 w-8"> </a>
+  <ul class="nav-links hidden md:flex space-x-6 text-white items-center">
+    <li class="px-3 py-2">
       <app-language></app-language>
     </li>
-    <li>
+    <li class="px-3 py-2">
       <app-log-in-button></app-log-in-button>
     </li>
-    <li>
+    <li class="px-3 py-2">
       <app-blog-button></app-blog-button>
     </li>
   </ul>
